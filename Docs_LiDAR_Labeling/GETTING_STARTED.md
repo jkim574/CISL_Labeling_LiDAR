@@ -12,8 +12,8 @@ LiDAR (Light Detection and Ranging) is a technology used to measure distances vi
 
 ### Operating System, Hardware Requirements, and Driver Versions
 In order to replicate our results, it is important to first replicate our environment. The operating system we used was Ubuntu 22.04. Most modern desktops with decent hardware will be capable of running the programs used. The only specific hardware requirement is **an Nvidia graphics card because OpenPCDet uses CUDA**.
-The Nvidia Driver version will vary based on the installed GPU, but ours is 535.183.01. From the terminal, you will need to install the CUDA Toolkit with `(base) library@StarLab03:~$ sudo apt install nvidia-cuda-toolkit`. The version that is supposed to install in Ubuntu 22.04 is CUDA Toolkit 11.5.119. You can check to see if the toolkit installed 
-correctly by running `(base) library@StarLab03:~$ nvidia-smi` in the terminal. You should receive a description similar to the one below.
+The Nvidia Driver version will vary based on the installed GPU, but ours is 535.183.01. From the terminal, you will need to install the CUDA Toolkit with `sudo apt install nvidia-cuda-toolkit`. The version that is supposed to install in Ubuntu 22.04 is CUDA Toolkit 11.5.119. You can check to see if the toolkit installed 
+correctly by running `nvidia-smi` in the terminal. You should receive a description similar to the one below.
 
 ![image](https://github.com/user-attachments/assets/51c68420-120b-4442-8b2b-303e5783b4d3)
 
