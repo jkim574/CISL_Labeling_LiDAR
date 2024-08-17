@@ -20,4 +20,4 @@ Project Goals:
 
 
 # Understanding Our Methodology and Getting Started
-In order to get a better grasp on what our project is and aims to provide, please refer to our [DATA_FUSION_PIPELINE.md](https://github.com/MasonAudet/CISL_LiDAR_Labeling_Project/blob/main/Documentation/DATA_FUSION_PIPELINE.md). Once you have a decent understanding of what our project provides and how it works, please refer to [GETTING_STARTED.md](https://github.com/MasonAudet/CISL_LiDAR_Labeling_Project/blob/main/Documentation/GETTING_STARTED.md) and follow the instructions to set up your environment and begin processing data.
+In order to get a better grasp on what our project is and aims to provide, please refer to our [DATA_FUSION_PIPELINE.md](https://github.com/jkim574/CISL_Labeling_LiDAR/blob/master/Docs_LiDAR_Labeling/DATA_FUSION_PIPELINE.md). Once you have a decent understanding of what our project provides and how it works, please refer to [GETTING_STARTED.md](https://github.com/jkim574/CISL_Labeling_LiDAR/blob/master/Docs_LiDAR_Labeling/GETTING_STARTED.md) and follow the instructions to set up your environment and begin processing data.
