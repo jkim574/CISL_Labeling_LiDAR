@@ -72,11 +72,11 @@ pip install Pillow
 ### Cloning OpenPCDet
 If you do not already have git on your machine, install it with `(openpcdet) library@StarLab03:~$ sudo apt install git`. Once installed, open a new terminal (ctrl + alt + t) and run the following command:
 ```
-(openpcdet) library@StarLab03:~$ git clone https://github.com/open-mmlab/OpenPCDet.git
+git clone https://github.com/jkim574/CISL_Labeling_LiDAR.git
 ```
 When the repository finishes copying files to your local machine, navigate to the new OpenPCDet folder using `cd OpenPCDet`. OpenPCDet has it's own set of requirements, so run the following command from inside the OpenPCDet folder to install it's required dependencies.
 ```
-(openpcdet) library@StarLab03:~/OpenPCDet$ pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 Before running the `setup.py` script, you need to install and setup GCC-9. Run the following in a terminal to download GCC-9 and set it as the default for the build.
 ```
