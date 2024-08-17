@@ -33,14 +33,14 @@ conda update --all
 When you open a new terminal, you are in the `base` environment by default. For most purposes, you will need to be inside the `openpcdet` environment created above. To enter the environment, you must run `conda activate openpcdet` in the terminal. 
 The easiest way to tell if you are in the environment or not is by checking the text at the front of your command line prompt. 
 
-If the text says `base`, you are executing commands using resources from the `base` environment. If the text says `openpcdet`, you are executing commands using the dependencies you install. In the following instructions, we will include a sample command line promt in front of each command `(openpcdet) library@StarLab03:~$` to remind you which environment you should be installing in. 
+If the text says `base`, you are executing commands using resources from the `base` environment. If the text says `openpcdet`, you are executing commands using the dependencies you install. 
 
-When you want to enter the `openpcdet` environment, use `(base) library@StarLab03:~$ conda activate openpcdet`. When you want to return to the `base` environment, use `(openpcdet) library@StarLab03:~$ conda deactivate`. Please see the photo below for reference:
+When you want to enter the `openpcdet` environment, use `conda activate openpcdet`. When you want to return to the `base` environment, use `conda deactivate`. Please see the photo below for reference:
 
 ![image](https://github.com/user-attachments/assets/a7ed284c-64be-4bd0-8c6c-1d506de8c294)
 
 
-Before creating your Miniconda3 environment, you will have to install GCC: `(base) library@StarLab03:~$ sudo apt install gcc`
+Before creating your Miniconda3 environment, you will have to install GCC: `sudo apt install gcc`
 
 
 Now that you have Miniconda3 and GCC installed, you can use the commands below to create an environment with Python 3.8 and activate it.
