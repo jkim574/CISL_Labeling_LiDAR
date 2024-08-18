@@ -116,30 +116,8 @@ OpenPCDet
 │ ...
 ```
 
-
 ### Replacing Existing Files
-There are a few files that need to be replaced in the `OpenPCDet` folder and `ensemble-boxes` library folder.
-
-
-The first step will be to navigate to the `OpenPCDet` folder. From there, you will open the `tools` folder and the `visual_utils` folder. Replace the `open3d_vis_utils.py` script with the one from our repository that has the same name (located in Labeling_LiDAR_data_project/Code/Replacement_Scripts). When finished, the file structure should look the same as before and match the format below:
-```
-OpenPCDet
-│ ...
-├── tools
-│    ├── ...
-│    ├── visual_utils
-│    │    ├── __pycache__
-│    │    ├── open3d_vis_utils.py (MODIFIED SCRIPT FROM OUR REPO)
-│    │    ├── visualize_utils.py
-│    ├── demo.py
-│    ├── test.py
-│    ├── train.py
-│ ...
-```
-
-
-The next file replacement is in a directory that will take more effort to navigate to. The path will be similar to this: /home/<USER>/miniconda3/envs/openpcdet/lib/python3.8/site-packages/ensemble-boxes/. Once you are there, you are going to need to replace
-a file called `ensemble_boxes_wbf_3d.py` with the modified version from our repository (located in Labeling_LiDAR_data_project/Code/Replacement_Scripts).
+There are a file that need to be replaced in the `ensemble-boxes` library folder. The path will be similar to this: /home/<USER>/miniconda3/envs/openpcdet/lib/python3.8/site-packages/ensemble-boxes/. Once you are there, you are going to need to replace a file called `ensemble_boxes_wbf_3d.py` with the modified version from our repository (located in CISL_Labeling_LiDAR).
 ```
 python3.8
 │ ...
@@ -159,52 +137,6 @@ python3.8
 │    ├── ...
 │ ...
 ```
-
-
-### Adding Our Custom Support Files
-There are a few files that need to be added to existing directories. The first one will be in `OpenPCDet/tools/vis_utils/` (the same directory where we replaced the first file). You will need to add in our support file for fusion visualization called "open3d_merge_vis_utils.py" (located in Labeling_LiDAR_data_project/Code/Replacement_Scripts). After adding in the script, your file structure should look like this:
-```
-OpenPCDet
-│ ...
-├── tools
-│    ├── ...
-│    ├── visual_utils
-│    │    ├── __pycache__
-│    │    ├── open3d_merge_vis_utils.py (SUPPORT SCRIPT FROM OUR REPO)
-│    │    ├── open3d_vis_utils.py
-│    │    ├── visualize_utils.py
-│    ├── demo.py
-│    ├── test.py
-│    ├── train.py
-│ ...
-```
-
-
-The next set of files will need to be added to `OpenPCDet/tools/`. You will be adding `get_predictions.py`, `lidar_model_fusion.py`, and `vis_merge_pred.py` (located in Labeling_LiDAR_data_project/Code/). When you are finished, the file structure should look like this:
-```
-OpenPCDet
-│ ...
-├── tools
-│    ├── cfgs
-│    ├── checkpoints
-│    ├── eval_utils
-│    ├── generated_labels
-│    │    ├── raw
-│    │    ├── fused
-│    ├── process_utils
-│    ├── scripts
-│    ├── train_utils
-│    ├── visual_utils
-│    ├── _init_path.py
-│    ├── demo.py
-│    ├── test.py
-│    ├── train.py
-│    ├── get_predictions.py (SUPPORT SCRIPT FROM OUR REPO)
-│    ├── lidar_model_fusion.py (SUPPORT SCRIPT FROM OUR REPO)
-│    ├── vis_merge_pred.py (SUPPORT SCRIPT FROM OUR REPO)
-│ ...
-```
-
 
 ## Section 3: Steps for Use
 
