@@ -60,6 +60,7 @@ conda install pytorch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2 pytorch-cuda=
 If you do not already have git on your machine, install it with `sudo apt install git`. Once installed, open a new terminal (ctrl + alt + t) and run the following command:
 ```
 git clone https://github.com/jkim574/CISL_Labeling_LiDAR.git
+cd CISL_Labeling_LiDAR
 ```
 
 After cloning the repository and navigating to the OpenPCDet directory, you need to ensure that the required dependencies are correctly installed. Specifically, the Pillow package needs to be handled with care to avoid potential conflicts. Before installing the required dependencies, uninstall any existing Pillow package to avoid conflicts. Then, install all required dependencies, including the correct version of Pillow:
