@@ -40,15 +40,15 @@ When you want to enter the `openpcdet` environment, use `conda activate openpcde
 ![image](https://github.com/user-attachments/assets/a7ed284c-64be-4bd0-8c6c-1d506de8c294)
 
 
-Before creating your Miniconda3 environment, you will have to install GCC: `sudo apt install gcc`
-
-
+Before creating your Miniconda3 environment, you will have to install GCC: 
+```
+sudo apt install gcc
+```
 Now that you have Miniconda3 and GCC installed, you can use the commands below to create an environment with Python 3.8 and activate it.
 ```
 conda create -n openpcdet python=3.8
 conda activate openpcdet
 ```
-
 
 While still inside the conda environment, you will need to install Pytorch 2.0.1 and Cuda 11.7 using the command below.
 ```
@@ -56,28 +56,18 @@ conda install pytorch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2 pytorch-cuda=
 ```
 
 
-There are a few other libraries you need to install/reinstall while in the conda environment, so please complete the following:
-```
-pip install spconv-cu116
-pip install open3d
-pip install kornia==0.6.5
-pip install bbox
-pip install ensemble-boxes
-pip install pyautogui
-pip uninstall pillow
-pip install Pillow
-```
-
-
 ### Cloning OpenPCDet
-If you do not already have git on your machine, install it with `(openpcdet) library@StarLab03:~$ sudo apt install git`. Once installed, open a new terminal (ctrl + alt + t) and run the following command:
+If you do not already have git on your machine, install it with `sudo apt install git`. Once installed, open a new terminal (ctrl + alt + t) and run the following command:
 ```
 git clone https://github.com/jkim574/CISL_Labeling_LiDAR.git
 ```
-When the repository finishes copying files to your local machine, navigate to the new OpenPCDet folder using `cd OpenPCDet`. OpenPCDet has it's own set of requirements, so run the following command from inside the OpenPCDet folder to install it's required dependencies.
+
+After cloning the repository and navigating to the OpenPCDet directory, you need to ensure that the required dependencies are correctly installed. Specifically, the Pillow package needs to be handled with care to avoid potential conflicts. Before installing the required dependencies, uninstall any existing Pillow package to avoid conflicts. Then, install all required dependencies, including the correct version of Pillow:
 ```
+pip uninstall pillow
 pip install -r requirements.txt
 ```
+
 Before running the `setup.py` script, you need to install and setup GCC-9. Run the following in a terminal to download GCC-9 and set it as the default for the build.
 ```
 sudo apt list gcc-9
@@ -92,7 +82,7 @@ NOTE: You might have to run `sudo apt install gcc-9` and `sudo apt install c++-9
 The final step is to make sure you are in a terminal navigated to the OpenPCDet folder and run the setup command:
 
 ```
-(openpcdet) library@StarLab03:~/OpenPCDet$ python setup.py develop
+python setup.py develop
 ```
 
 
