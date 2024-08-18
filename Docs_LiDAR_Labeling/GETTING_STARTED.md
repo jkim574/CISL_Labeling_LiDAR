@@ -227,10 +227,10 @@ docker build -t cisl/ros2:humble --file ros2_humble_jammy.Dockerfile .
 docker run -it --rm -v "<Local path to db3 files>:/home/cisl/SensorPlatform/" cisl/ros2:humble
 ```
 
-After this, we are now inside the container's shell, where we can start working with ROS2 and your .db3 files. Change your directory to where python script **pcd_to_npy.py** and **ROS2 .db3** files are located. Then run this command to convert **.db3** file into **.npy** and **.png** files. 
+After this, we are now inside the container's shell, where we can start working with ROS2 and your .db3 files. Change your directory to where python script **db3_to_npy_png.py** and **ROS2 .db3** files are located. **db3_to_npy_png.py** file should be located in **~/CISL_Labeling_LiDAR/data/custom/ros_to_npy/ directory**. Then run this command to convert **.db3** file into **.npy** and **.png** files. 
 
 ```
-python3 pcd_to_npy.py --input_file <your db3 files> --output_file <output file path>
+python3 db3_to_npy_png.py --input_file <your db3 files> --output_file <output file path>
 ```
 This will convert all **.db3** files to **.npy** and **.png** files in your designated directory.
 
