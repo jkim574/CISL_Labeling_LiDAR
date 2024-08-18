@@ -11,3 +11,15 @@ torchvision
 SharedArray
 opencv-python
 pyquaternion
+
+# Additional dependencies for this project
+spconv-cu116
+open3d
+kornia==0.6.5
+bbox
+ensemble-boxes
+pyautogui
+av2
+
+# Pillow installation (uninstalling old pillow and installing specific version)
+Pillow
