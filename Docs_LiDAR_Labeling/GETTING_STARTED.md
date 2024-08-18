@@ -91,12 +91,12 @@ python setup.py develop
 ## Section 2: File Setup
 
 ### Creating Necessary Folders
-Now that all the necessary dependencies are installed within the conda environment and base environment, there are a few modifications that need to be made to the `OpenPCDet` file structure.
-For starters, you will need to navigate to the `OpenPCDet` folder and open the `tools` folder (/home/<USER>/OpenPCDet/tools). In the tools folder, you will need to create a new folder titled `checkpoints`. This is where all of your checkpoint **.pth**
+Now that all the necessary dependencies are installed within the conda environment and base environment, there are a few modifications that need to be made to the `CISL_Labelig_LiDAR` file structure.
+For starters, you will need to navigate to the `CISL_Labelig_LiDAR` folder and open the `tools` folder. In the tools folder, you will need to create a new folder titled `checkpoints`. This is where all of your checkpoint **.pth**
 files will be stored and referenced from when using models to create predictions. It is also recommended that you create another folder titled `generated_labels` with two subfolders called `raw` and `fused`. When finished, your OpenPCDet folder should look like 
 the structure below.
 ```
-OpenPCDet
+CISL_Labelig_LiDAR
 │ ...
 ├── tools
 │    ├── cfgs
@@ -147,7 +147,7 @@ The first step in generating bounding box predictions is choosing the pretrained
 
 The models are in the form of **.pth** files and are now located in your `Downloads` folder. You will need to open your `Downloads` folder and copy these **.pth** files into the `checkpoints` folder you created earlier (located in `OpenPCDet/tools/`). Once you have copied the files into the folder, your structure should look like this:
 ```
-OpenPCDet
+CISL_Labelig_LiDAR
 │ ...
 ├── tools
 │    ├── cfgs
@@ -239,9 +239,9 @@ This will convert all **.db3** files to **.npy** and **.png** files in your desi
 Now we will need to run `OpenPCDet`'s built in `demo.py` file in order to verify that the data was unpacked correctly and was properly oriented to match KITTI specifications. Before we do this, it would be wise to move your unpacked data to an area that is easier to reference. These next steps will help you keep the data organized and make the commands you run much shorter.
 
 
-Start by navigating to the folder at `/OpenPCDet/data`. Once inside, you will need to create a new folder called `cisl`. Within the `cisl` folder, create a folder with the date of collection (ex. `072124`). Each <date_of_collection> folder should have subfolders for `tower_#` and each `tower_#` folder should have subfolders for `lidar` and `image`. Once you have made these directories, you will need to add the unpacked data into the corresponding folders. When finished, your folders should look something like this:
+Start by navigating to the folder at `/CISL_Labelig_LiDAR/data`. Once inside, you will need to create a new folder called `cisl`. Within the `cisl` folder, create a folder with the date of collection (ex. `072124`). Each <date_of_collection> folder should have subfolders for `tower_#` and each `tower_#` folder should have subfolders for `lidar` and `image`. Once you have made these directories, you will need to add the unpacked data into the corresponding folders. When finished, your folders should look something like this:
 ```
-OpenPCDet
+CISL_Labelig_LiDAR
 │ ...
 ├── data
 │    ├── ...
@@ -269,10 +269,10 @@ OpenPCDet
 To run demo.py, open a new terminal prompt with `(ctrl + alt + t)` and follow the commands below:
 ```
 conda activate openpcdet
-cd OpenPCDet/tools
+cd CISL_Labelig_LiDAR/tools
 python demo.py --cfg_file /cfgs/kitti_models/<CONFIG_FILE_FOR_CHOSEN_MODEL.yaml> \
 --ckpt /checkpoints/<CORRESPONDING_MODEL_FILE.pth> \
---data_path /OpenPCDet/data/cisl/072124/Tower_1/run_1/lidar/ \
+--data_path /CISL_Labelig_LiDAR/data/cisl/072124/Tower_1/run_1/lidar/ \
 --ext .npy
 ```
 
@@ -285,17 +285,17 @@ You want to use this opportunity to make sure that the model is taking the file 
 Now that we have confirmed the data to be formatted correctly, we can collect label predicitons for a given scene from multiple models. We will do this using our `get_predictions.py` script. Follow the example below, keeping in mind that you need at least two **.csv** files for fusion. You can generate more if you would like by following the same format and changing the models/:
 ```
 conda activate openpcdet
-cd OpenPCDet/tools
+cd CISL_Labelig_LiDAR/tools
 
 python get_predictions.py --cfg_file /cfgs/kitti_models/<CONFIG_FILE_FOR_CHOSEN_MODEL.yaml> \
 --ckpt /checkpoints/<CORRESPONDING_MODEL_FILE.pth> \
---data_path /OpenPCDet/data/cisl/072124/Tower_1/run_1/lidar/ \
+--data_path /CISL_Labelig_LiDAR/data/cisl/072124/Tower_1/run_1/lidar/ \
 --output /generated_labels/raw/<NAME_OF_FILE>.csv \
 --ext .npy
 
 python get_predictions.py --cfg_file /cfgs/kitti_models/<CONFIG_FILE_FOR_CHOSEN_MODEL.yaml> \
 --ckpt /checkpoints/<CORRESPONDING_MODEL_FILE.pth> \
---data_path /OpenPCDet/data/cisl/072124/Tower_1/run_1/lidar/ \
+--data_path /CISL_Labelig_LiDAR/data/cisl/072124/Tower_1/run_1/lidar/ \
 --output /generated_labels/raw/<NAME_OF_FILE>.csv \
 --ext .npy
 
@@ -310,8 +310,8 @@ In order to generate a **.csv** file containing fusion results from your input m
 Keep in mind that `--iou_thr` sets the minimum IoU threshold and `--skip_box_thr` sets the minimum confidence score value to include a label.
 ```
 conda activate openpcdet
-cd OpenPCDet
-cd tools
+cd CISL_Labelig_LiDAR/tools
+
 
 python lidar_model_fusion.py --input_files <PATH_TO_FILE_1> <PATH_TO_FILE_2> ... \
 --output_file /generated_labels/fused/<NAME_OF_FILE>.csv \
@@ -324,7 +324,7 @@ python lidar_model_fusion.py --input_files <PATH_TO_FILE_1> <PATH_TO_FILE_2> ...
 The last step is only for if you want to visualize the entire scene frame by frame. This program will take a **.csv** file as input (raw or fused) and quickly take screenshots of each frame from the scene as it populates. The settings to use this tool vary based on the monitor you are using and the resolution. Getting this visualization tool to work takes a bit of trial and error. You will need to start by running the commands below:
 ```
 conda activate openpcdet
-cd OpenPCDet/tools
+cd CISL_Labelig_LiDAR/tools
 
 python vis_merge_pred.py --label_path /generated_labels/fused/<FUSED_FILE_NAME>.csv
 ```
