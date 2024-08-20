@@ -270,9 +270,9 @@ To run demo.py, open a new terminal prompt with `(ctrl + alt + t)` and follow th
 ```
 conda activate openpcdet
 cd CISL_Labelig_LiDAR/tools
-python demo.py --cfg_file /cfgs/kitti_models/<CONFIG_FILE_FOR_CHOSEN_MODEL.yaml> \
---ckpt /checkpoints/<CORRESPONDING_MODEL_FILE.pth> \
---data_path /CISL_Labelig_LiDAR/data/cisl/072124/Tower_1/run_1/lidar/ \
+python demo.py --cfg_file cfgs/kitti_models/<CONFIG_FILE_FOR_CHOSEN_MODEL.yaml> \
+--ckpt checkpoints/<CORRESPONDING_MODEL_FILE.pth> \
+--data_path CISL_Labelig_LiDAR/data/cisl/072124/Tower_1/run_1/lidar/ \
 --ext .npy
 ```
 
@@ -288,15 +288,15 @@ conda activate openpcdet
 cd CISL_Labelig_LiDAR/tools
 
 python get_predictions.py --cfg_file /cfgs/kitti_models/<CONFIG_FILE_FOR_CHOSEN_MODEL.yaml> \
---ckpt /checkpoints/<CORRESPONDING_MODEL_FILE.pth> \
---data_path /CISL_Labelig_LiDAR/data/cisl/072124/Tower_1/run_1/lidar/ \
---output /generated_labels/raw/<NAME_OF_FILE>.csv \
+--ckpt checkpoints/<CORRESPONDING_MODEL_FILE.pth> \
+--data_path CISL_Labelig_LiDAR/data/cisl/072124/Tower_1/run_1/lidar/ \
+--output generated_labels/raw/<NAME_OF_FILE>.csv \
 --ext .npy
 
 python get_predictions.py --cfg_file /cfgs/kitti_models/<CONFIG_FILE_FOR_CHOSEN_MODEL.yaml> \
---ckpt /checkpoints/<CORRESPONDING_MODEL_FILE.pth> \
---data_path /CISL_Labelig_LiDAR/data/cisl/072124/Tower_1/run_1/lidar/ \
---output /generated_labels/raw/<NAME_OF_FILE>.csv \
+--ckpt checkpoints/<CORRESPONDING_MODEL_FILE.pth> \
+--data_path CISL_Labelig_LiDAR/data/cisl/072124/Tower_1/run_1/lidar/ \
+--output generated_labels/raw/<NAME_OF_FILE>.csv \
 --ext .npy
 
 ...
